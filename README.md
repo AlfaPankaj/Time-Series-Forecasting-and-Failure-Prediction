@@ -1,0 +1,2 @@
+# Time-Series Forecasting and Failure Prediction
+This project tackles a dual machine learning challenge: forecasting a time-series of measured values and predicting rare failure events within that series. It employs a sophisticated approach combining an XGBoost regression model for accurate forecasting and a highly specialized, cost-sensitive XGBoost classification model to identify 'FAIL' labels in a severely imbalanced dataset.
