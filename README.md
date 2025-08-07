@@ -1,7 +1,7 @@
 # Time-Series Forecasting and Failure Prediction
 This project tackles a dual machine learning challenge: forecasting a time-series of measured values and predicting rare failure events within that series. It employs a sophisticated approach combining an XGBoost regression model for accurate forecasting and a highly specialized, cost-sensitive XGBoost classification model to identify 'FAIL' labels in a severely imbalanced dataset.
 
-The final output is a 30-day forecast of the 'Measured_value', with the top 6 most likely future failure points clearly marked.
+The final output is a 30-day forecast of the 'Measured_value', with the top 63 most likely future failure points clearly marked.
 
 🎯 Project Objective
 The primary goals of this project are twofold:
@@ -12,8 +12,6 @@ Failure Prediction: To develop a classification model capable of identifying rar
 
 📊 Dataset & The Imbalance Challenge
 The project uses a time-stamped dataset (Sample_data.xlsx) containing a Measured_value and a corresponding Label ('PASS' or 'FAIL').
-
-A critical characteristic of this dataset is its severe class imbalance. The 'FAIL' instances represent only about 1.6% of the daily aggregated data, creating a 60:1 imbalance ratio. This makes traditional metrics challenging to interpret:
 
 RMSE for Regression: While the regression model's primary goal is to minimize RMSE, the few extreme values from 'FAIL' days can disproportionately affect this metric.
 
@@ -54,12 +52,12 @@ This predicted value is then used as an input feature for the next day's predict
 
 Simultaneously, the classification model predicts the failure probability for each forecasted day.
 
-The top 6 days with the highest failure probability are identified as the most likely future failures.
+The top 60 days with the highest failure probability are identified as the most likely future failures.
 
 📈 Key Results
-The XGBoost Regressor successfully achieved its goal, with a final RMSE of 2.2372, which is 1.31% better than the baseline standard deviation of the test data (2.2669).
+The XGBoost Regressor successfully achieved its goal, with a final RMSE of 0.7411, which is 57.46% better than the baseline standard deviation of the test data (1.7420).
 
-The cost-sensitive XGBoost Classifier was able to achieve a perfect recall of 1.0 on the training data by using an extremely high positive class weight and an optimized probability threshold, successfully identifying all 6 failure cases.
+The cost-sensitive XGBoost Classifier was able to achieve a perfect recall of 0.8833 on the training data by using an extremely high positive class weight and an optimized probability threshold, successfully identifying 53 failure cases.
 
 📁 File Structure
 .
