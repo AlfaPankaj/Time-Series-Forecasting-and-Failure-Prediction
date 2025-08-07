@@ -64,10 +64,9 @@ The cost-sensitive XGBoost Classifier was able to achieve a perfect recall of 1.
 📁 File Structure
 .
 ├── Data_cleaning_and_preparation.ipynb # Initial data cleaning and resampling.
-├── final_Review.ipynb                  # In-depth model review, feature engineering, and imbalance handling.
-├── submission.ipynb                    # Alternative submission and visualization approaches.
-├── Final_submission.ipynb              # The main notebook to run for the final results and forecast.
+├── Main.ipynb                          # The main notebook to run for the final results and forecast.
 ├── Sample_data.xlsx                    # The raw input dataset.
+├── Cleaned_data.xlsx                   # The cleaned dataset.
 └── measured_value.png                  # The final output plot showing the forecast.
 
 🚀 How to Run
